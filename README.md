@@ -83,7 +83,7 @@ Web interface
 
 ### Quick Install (Pre-built APK)
 
-1. **Download APK**: Get `WOLFireTV-v1.0.4-web-auth-fix.apk` from releases
+1. **Download APK**: Get `WOLFireTV-v1.0.4.apk` from releases
 2. **Enable Developer Options on Fire TV**:
    ```
    Settings → My Fire TV → About → Click "Build Version" 7 times
@@ -92,7 +92,7 @@ Web interface
 3. **Install via ADB**:
    ```bash
    adb connect <FIRE_TV_IP>:5555
-   adb install WOLFireTV-v1.0.4-web-auth-fix.apk
+   adb install WOLFireTV-v1.0.4.apk
    ```
 
 ### Building from Source
