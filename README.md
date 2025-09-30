@@ -19,6 +19,14 @@ A complete Android application that runs on Amazon Fire TV Stick 4K to provide W
 
 ## 📱 Screenshots
 
+<img width="2377" height="1284" alt="image" src="https://github.com/user-attachments/assets/9eea48dc-0788-4f29-982d-cc434776da9a" />
+
+
+Web interface
+<img width="1938" height="1267" alt="image" src="https://github.com/user-attachments/assets/0c3dfacd-75fb-479b-9e2b-2381ad44e5ef" />
+
+
+
 ### Mobile Configuration Interface
 - Password-protected settings with authentication toggle
 - MAC address configuration with auto-formatting
