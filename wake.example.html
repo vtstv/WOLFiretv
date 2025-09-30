@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wake PC</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body style="text-align:center;padding:50px;font-family:Arial;background:#1a1a1a;color:#fff;">
+<h1 style="color:#4CAF50;">🖥️ PC Wake Control</h1>
+<div style="margin:30px 0;">
+    <button onclick="wakePC()" style="padding:20px 40px;font-size:18px;background:#4CAF50;color:white;border:none;border-radius:10px;cursor:pointer;box-shadow:0 4px 8px rgba(0,0,0,0.3);">
+    ⚡ Wake PC
+    </button>
+</div>
+<div style="margin:20px 0;">
+    <button onclick="wakePCWithUrl()" style="padding:15px 30px;font-size:16px;background:#2196F3;color:white;border:none;border-radius:8px;cursor:pointer;">
+    🔗 Wake via URL (GET)
+    </button>
+</div>
+<p id="status" style="margin-top:30px;padding:15px;border-radius:5px;background:#2d2d2d;"></p>
+<script>
+// Configuration - Update these values
+const SERVER_IP = '192.168.0.51';
+const SERVER_PORT = '8085';
+const AUTH_TOKEN = 'default_token_change_me';
+const USE_AUTH = true; // Set to false if authentication is disabled
+
+function wakePC() {
+    document.getElementById('status').innerHTML = '⏳ Sending wake signal via POST...';
+    
+    const headers = { 'Content-Type': 'application/json' };
+    if (USE_AUTH) {
+        headers['Authorization'] = `Bearer ${AUTH_TOKEN}`;
+    }
+    
+    fetch(`http://${SERVER_IP}:${SERVER_PORT}/wake`, {
+        method: 'POST',
+        headers: headers
+    })
+    .then(response => response.json())
+    .then(data => {
+        document.getElementById('status').innerHTML = 
+            data.success ? '✅ ' + data.message : '❌ Error: ' + data.message;
+        document.getElementById('status').style.backgroundColor = data.success ? '#155724' : '#721c24';
+    })
+    .catch(error => {
+        document.getElementById('status').innerHTML = '❌ Network Error: ' + error.message;
+        document.getElementById('status').style.backgroundColor = '#721c24';
+    });
+}
+
+function wakePCWithUrl() {
+    document.getElementById('status').innerHTML = '⏳ Sending wake signal via GET...';
+    
+    const url = USE_AUTH ? 
+        `http://${SERVER_IP}:${SERVER_PORT}/wake?token=${AUTH_TOKEN}` :
+        `http://${SERVER_IP}:${SERVER_PORT}/wake`;
+    
+    fetch(url, { method: 'GET' })
+    .then(response => response.json())
+    .then(data => {
+        document.getElementById('status').innerHTML = 
+            data.success ? '✅ ' + data.message : '❌ Error: ' + data.message;
+        document.getElementById('status').style.backgroundColor = data.success ? '#155724' : '#721c24';
+    })
+    .catch(error => {
+        document.getElementById('status').innerHTML = '❌ Network Error: ' + error.message;
+        document.getElementById('status').style.backgroundColor = '#721c24';
+    });
+}
+
+// Add hover effects
+document.addEventListener('DOMContentLoaded', function() {
+    const buttons = document.querySelectorAll('button');
+    buttons.forEach(button => {
+        button.onmouseover = function() { this.style.transform = 'scale(1.05)'; };
+        button.onmouseout = function() { this.style.transform = 'scale(1)'; };
+    });
+});
+</script>
+</body>
+</html>

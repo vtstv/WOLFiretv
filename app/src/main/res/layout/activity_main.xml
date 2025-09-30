@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="#1a1a1a">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Header -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="🔥 WOL Fire TV Configuration"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#ffffff"
+            android:gravity="center"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Service Status -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textServiceStatus"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="🔴 Service Stopped"
+                    android:textSize="16sp"
+                    android:textColor="#ffffff" />
+
+                <Button
+                    android:id="@+id/buttonServiceControl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Start Service"
+                    android:backgroundTint="#007acc" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textServerAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Server: Not running"
+                android:textSize="14sp"
+                android:textColor="#cccccc"
+                android:layout_marginTop="4dp" />
+
+        </LinearLayout>
+
+        <!-- Web Password -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Web Interface Password"
+            android:textColor="#ffffff"
+            android:textSize="14sp"
+            android:layout_marginTop="16dp" />
+
+        <EditText
+            android:id="@+id/editWebPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="admin123"
+            android:textColor="#ffffff"
+            android:textColorHint="#888888"
+            android:backgroundTint="#555555"
+            android:inputType="textPassword" />
+
+        <!-- Authentication Token -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="API Authentication Token"
+            android:textColor="#ffffff"
+            android:textSize="14sp"
+            android:layout_marginTop="16dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/editAuthToken"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Enter API authentication token"
+                android:textColor="#ffffff"
+                android:textColorHint="#888888"
+                android:backgroundTint="#555555"
+                android:inputType="textPassword" />
+
+            <Button
+                android:id="@+id/buttonShowToken"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="👁️ Show"
+                android:layout_marginStart="4dp"
+                android:backgroundTint="#6c757d" />
+
+            <Button
+                android:id="@+id/buttonGenerateToken"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🎲 Generate"
+                android:layout_marginStart="4dp"
+                android:backgroundTint="#28a745" />
+
+        </LinearLayout>
+
+        <!-- MAC Address -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Target PC MAC Address"
+            android:textColor="#ffffff"
+            android:textSize="14sp"
+            android:layout_marginTop="16dp" />
+
+        <EditText
+            android:id="@+id/editMacAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="AA:BB:CC:DD:EE:FF"
+            android:textColor="#ffffff"
+            android:textColorHint="#888888"
+            android:backgroundTint="#555555"
+            android:inputType="text" />
+
+        <!-- Broadcast Address -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Broadcast Address"
+            android:textColor="#ffffff"
+            android:textSize="14sp"
+            android:layout_marginTop="16dp" />
+
+        <EditText
+            android:id="@+id/editBroadcastAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="255.255.255.255"
+            android:textColor="#ffffff"
+            android:textColorHint="#888888"
+            android:backgroundTint="#555555"
+            android:inputType="text" />
+
+        <!-- Ports -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="16dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_marginEnd="8dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="WOL Port"
+                    android:textColor="#ffffff"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/editWolPort"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="9"
+                    android:textColor="#ffffff"
+                    android:textColorHint="#888888"
+                    android:backgroundTint="#555555"
+                    android:inputType="number" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_marginStart="8dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="HTTP Port"
+                    android:textColor="#ffffff"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/editHttpPort"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="8085"
+                    android:textColor="#ffffff"
+                    android:textColorHint="#888888"
+                    android:backgroundTint="#555555"
+                    android:inputType="number" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- IP Allowlist -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="IP Allowlist (CIDR, comma-separated)"
+            android:textColor="#ffffff"
+            android:textSize="14sp"
+            android:layout_marginTop="16dp" />
+
+        <EditText
+            android:id="@+id/editIpAllowlist"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="192.168.1.0/24, 10.0.0.0/8 (leave empty to allow all)"
+            android:textColor="#ffffff"
+            android:textColorHint="#888888"
+            android:backgroundTint="#555555"
+            android:inputType="text" />
+
+        <!-- Switches -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Enable HTTPS"
+                    android:textColor="#ffffff"
+                    android:textSize="16sp" />
+
+                <Switch
+                    android:id="@+id/switchHttps"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Auto-start on Boot"
+                    android:textColor="#ffffff"
+                    android:textSize="16sp" />
+
+                <Switch
+                    android:id="@+id/switchAutoStart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <!-- Authentication Required -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="🔐 Require API Authentication"
+                    android:textColor="#ffffff"
+                    android:textSize="16sp" />
+
+                <Switch
+                    android:id="@+id/switchRequireAuth"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Action Buttons -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="24dp">
+
+            <Button
+                android:id="@+id/buttonSave"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="💾 Save Config"
+                android:backgroundTint="#28a745"
+                android:layout_marginEnd="4dp" />
+
+            <Button
+                android:id="@+id/buttonTestWake"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="💤 Test Wake"
+                android:backgroundTint="#ffc107"
+                android:layout_marginStart="4dp" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/buttonViewLogs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="📋 View Logs"
+            android:backgroundTint="#6c757d"
+            android:layout_marginTop="8dp" />
+
+        <!-- Instructions -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="💡 Instructions:\n1. Set web password and API token\n2. Enter your PC's MAC address\n3. Save configuration and start service\n4. Access web interface at http://SERVER_IP:8085\n\nWOL Fire TV v1.0.0\n© 2025 Murr | github.com/vtstv/WOLFireTV"
+            android:textColor="#cccccc"
+            android:textSize="12sp"
+            android:layout_marginTop="24dp"
+            android:padding="12dp"
+            android:background="#2d2d2d" />
+
+    </LinearLayout>
+
+</ScrollView>
